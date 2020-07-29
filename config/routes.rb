@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # get 'artists/index'
-  # get 'artists/:id', to: 'artists#show'
+  get 'artists/:id', to: 'artists#show'
   # get 'artists/destroy'
   # get 'artists/update'
   # get 'artists/new'
