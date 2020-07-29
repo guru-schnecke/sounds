@@ -1,0 +1,26 @@
+
+<%= form_for @artist do |f| %>
+
+<div>
+    <%= f.label :name, "Artist Name" %>
+    <%= f.text_field :name %>
+</div>
+<div>
+    <%= f.label :location, "Artist Location" %>
+    <%= f.text_field :location %>
+</div>
+<div>
+    <%= f.label :hometown, "Artist Hometown" %>
+    <%= f.text_field :hometown %>
+</div>
+<div>
+    <%= f.label :year, "Artist Year" %>
+    <%= f.text_field :year %>
+</div>
+<div>
+    <%= f.label :age, "Artist Age" %>
+    <%= f.text_field :age %>
+</div>
+
+<%= f.submit "Submit" %>
+<% end %>
