@@ -1,6 +1,7 @@
 <h1>Artists#index</h1>
-<p>Find me in app/views/artists/index.html.erb</p>
 
+<%= link_to "Add Artist", new_artist_path %>
+<%# add artist page %>
 <table>
 <tr>
     <td>id</td>
@@ -12,7 +13,10 @@
 </tr>
 <% @artists.each do |artist| %>
 <tr>
-    <td><%= artist.id %></td>
+    <td>
+    <%= link_to artist.id, artist_path(artist) %>
+    
+    </td>
     <td><%= artist.name %></td>
     <td><%= artist.location %></td>
     <td><%= artist.year %></td>

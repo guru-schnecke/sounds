@@ -5,6 +5,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @artist = Artist.find(params[:id])
   end
 
   def destroy
@@ -14,5 +15,9 @@ class ArtistsController < ApplicationController
   end
 
   def new
+  end
+
+  def edit
+  
   end
 end

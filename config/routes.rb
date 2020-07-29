@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get 'artists/index'
-  # get 'artists/show'
+  # get 'artists/index'
+  # get 'artists/:id', to: 'artists#show'
   # get 'artists/destroy'
   # get 'artists/update'
   # get 'artists/new'
+
+  resources :artists
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # get 'welcome/index' # localhost:3000/welcome/index
