@@ -16,10 +16,10 @@ class ArtistsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get update" do
-    get artists_update_url
-    assert_response :success
-  end
+  # test "should get update" do
+  #   get artists_update_url
+  #   assert_response :success
+  # end
 
   test "should get new" do
     get artists_new_url
