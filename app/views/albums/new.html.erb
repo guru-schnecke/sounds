@@ -2,7 +2,8 @@
 <p>Find me in app/views/albums/new.html.erb</p>
 <%# /artist/4/albums/new %>
 <%# /albums/create %>
-<%= form_for [@artist, @album] do |f| %>
+<%#= form_for [@artist, @album] do |f| %>
+<%= form_for @album do |f| %>
     <div class="form-row">
         <%= f.label :name, "Album Name"%>
         <%= f.text_field :name %>
@@ -19,6 +20,13 @@
         <%= f.label :number_of_songs, "Number of Songs"%>
         <%= f.text_field :number_of_songs %>
     </div>
+
+    <%# <div class="form-row"> %>
+        <%#= f.label :artist_id, "Artist Name"%>
+
+        <%#= select_tag("artist_id", options_from_collection_for_select(@artists, "id", "name"), prompt: "Select An artist") %>
+    <%# </div> %>
+    
     
     <%= f.submit %>
 <% end %>

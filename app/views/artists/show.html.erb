@@ -11,10 +11,14 @@
             <h3><%= @artist.age %></h3>
         </div>
         <div class="col-md-6">
+        <div>
+    <%= link_to "New Album", new_artist_album_path(@artist) %>
+</div>
             <table class="table mt-4">
 <tr>
     <td>id</td>
     <td>name</td>
+    <td>Artist Name</td>
     <td>cover</td>
     <td>year</td>
     <td>number_of_songs</td>
@@ -27,6 +31,7 @@
     
     </td>
     <td><%= album.name %></td>
+    <td><%= album.artist.name %></td>
     <td><%= album.cover %></td>
     <td><%= album.year %></td>
     <td><%= album.number_of_songs %></td>

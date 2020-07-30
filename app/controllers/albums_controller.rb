@@ -27,6 +27,8 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
+    # uncomment line 31 & comment line 32 if you want to select artist yourself
+    # @artists = Artist.all
     @artist = Artist.find(params[:artist_id])
   end
 
