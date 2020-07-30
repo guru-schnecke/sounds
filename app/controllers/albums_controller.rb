@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   def index
-    @album = Album.all
+    @albums = Album.all
   end
 
   def create

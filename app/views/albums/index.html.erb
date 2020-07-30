@@ -1,2 +1,34 @@
 <h1>Albums#index</h1>
 <p>Find me in app/views/albums/index.html.erb</p>
+
+
+<div class="container">
+<%= link_to "Add Album", new_album_path, class: "btn btn-danger" %>
+<table class="table mt-4">
+<tr>
+    <td>id</td>
+    <td>name</td>
+    <td>cover</td>
+    <td>year</td>
+    <td>number_of_songs</td>
+    <td>actions</td>
+</tr>
+<% @albums.each do |album| %>
+<tr>
+    <td>
+    <%= link_to album.id, album_path(album.id) %>
+    
+    </td>
+    <td><%= album.name %></td>
+    <td><%= album.cover %></td>
+    <td><%= album.year %></td>
+    <td><%= album.number_of_songs %></td>
+    <td>
+        <%= link_to "Edit", edit_album_path(album), class: "btn btn-warning" %>
+    </td>
+</tr>
+
+<% end %>
+
+</table>
+</div>
