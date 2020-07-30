@@ -7,18 +7,18 @@ class AlbumsController < ApplicationController
     # Ebere Basic way of doing this
     #  would be helpful if you dont know
     #  what to do in rails
-    @album = Album.new(album_params)
-    artist = Artist.find(params[:artist_id])
-    @album["artist_id"] = artist.id
+    # @album = Album.new(album_params)
+    # artist = Artist.find(params[:artist_id])
+    # @album["artist_id"] = artist.id
     # End of Eberes Basic way
 
     # the rails way of doing this is much more 
     # SIMPLER!!!!!!!!!!!!
-
-
+    @artist = Artist.find(params[:artist_id])
+    @album = @artist.albums.build(album_params)
     # End of rails way
     if @album.save
-      redirect_to artist_path(artist)
+      redirect_to artist_path(@artist)
     else
       render :new
     end
@@ -34,9 +34,12 @@ class AlbumsController < ApplicationController
   end
 
   def edit
+    @artist = Artist.find(params[:artist_id])
+    @album = Album.find(params[:id])
   end
 
   def update
+    
   end
 
   def show

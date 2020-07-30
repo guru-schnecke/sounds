@@ -1,5 +1,44 @@
 <h1>Artists#show</h1>
 <p>Find me in app/views/artists/show.html.erb</p>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <%# Artist Information %>
+            <h3><%= @artist.name %></h3>
+            <h3><%= @artist.hometown %></h3>
+            <h3><%= @artist.location %></h3>
+            <h3><%= @artist.age %></h3>
+        </div>
+        <div class="col-md-6">
+            <table class="table mt-4">
+<tr>
+    <td>id</td>
+    <td>name</td>
+    <td>cover</td>
+    <td>year</td>
+    <td>number_of_songs</td>
+    <td>actions</td>
+</tr>
+<% @artist.albums.each do |album| %>
+<tr>
+    <td>
+    <%= link_to album.id, album_path(album.id) %>
+    
+    </td>
+    <td><%= album.name %></td>
+    <td><%= album.cover %></td>
+    <td><%= album.year %></td>
+    <td><%= album.number_of_songs %></td>
+    <td>
+        <%= link_to "Edit", edit_album_path(album), class: "btn btn-warning" %>
+    </td>
+</tr>
 
-<%=  @artist.name %>
+<% end %>
+
+</table>
+        </div>
+    </div>
+
+</div>
