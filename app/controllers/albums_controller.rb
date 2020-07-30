@@ -4,9 +4,13 @@ class AlbumsController < ApplicationController
   end
 
   def create
+    # @artist = Artist.find(params[:artist_id])
+
   end
 
   def new
+    @album = Album.new
+
   end
 
   def destroy
