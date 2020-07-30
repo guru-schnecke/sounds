@@ -31,7 +31,7 @@
     <td><%= album.year %></td>
     <td><%= album.number_of_songs %></td>
     <td>
-        <%= link_to "Edit", edit_album_path(album), class: "btn btn-warning" %>
+        <%= link_to "Edit", edit_artist_album_path(@artist, album), class: "btn btn-warning" %>
     </td>
 </tr>
 

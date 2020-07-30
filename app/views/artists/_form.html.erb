@@ -1,3 +1,9 @@
+<% if @artist.errors.any? %>
+    <%= pluralize(@artist.errors.count, "error") %>
+    <% @artist.errors.full_messages.each do |message| %>
+        <div class="alert alert-danger"> <%= message %> </div>
+    <% end %>
+<% end %>
 <div class="container">
 <%= form_for @artist do |f| %>
 

@@ -39,7 +39,14 @@ class AlbumsController < ApplicationController
   end
 
   def update
-    
+    @album = Album.find(params[:id])
+    artist = Artist.find(params[:artist_id])
+    # End of rails way
+    if @album.update(album_params)
+      redirect_to artist_path(artist)
+    else
+      render :edit
+    end
   end
 
   def show
