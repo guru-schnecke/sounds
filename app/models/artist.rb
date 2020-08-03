@@ -6,5 +6,7 @@ class Artist < ApplicationRecord
 
     has_many :albums # @artist.album
 
-    has_many :songs, through: :albums
+    # has_many :songs, through: :albums
+
+    has_and_belongs_to_many :songs
 end
