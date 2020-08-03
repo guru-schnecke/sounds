@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   before_action :new_song, only: [:new, :create]
-  before_action :set_song, only: [:show, :edit]
+  before_action :set_song, only: [:show, :edit, :update]
   def index
     @songs = Song.all
   end
@@ -27,6 +27,7 @@ class SongsController < ApplicationController
   end
 
   def edit
+    @album = Album.find(params[:album_id])
   end
 
   def destroy
@@ -43,6 +44,6 @@ class SongsController < ApplicationController
   end
   def song_params
     # why are you laughing pasti
-    params.require(:song).permit(:name, :url, :album_id)
+    params.require(:song).permit(:name, :url, :album_id, artist_ids: [])
   end
 end

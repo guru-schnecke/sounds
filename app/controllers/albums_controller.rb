@@ -52,6 +52,7 @@ class AlbumsController < ApplicationController
   end
 
   def show
+    @album = Album.find(params[:id])
   end
 
   private

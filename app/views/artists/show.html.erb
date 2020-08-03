@@ -1,6 +1,12 @@
 <h1>Artists#show</h1>
 <p>Find me in app/views/artists/show.html.erb</p>
 
+<% @artist.songs.each do |song| %>
+    Artist with song <%= song.name %>
+<% end %>
+
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-6">

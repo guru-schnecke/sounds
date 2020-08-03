@@ -5,5 +5,6 @@ class Artist < ApplicationRecord
     validates :age, presence: true, length: { maximum: 3}
 
     has_many :albums # @artist.album
-    has_many :songs, through: :artists_songs
+
+    has_many :songs, through: :albums
 end
